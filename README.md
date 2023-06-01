@@ -1,3 +1,9 @@
+# <<<<<<< HEAD
+
+TechResumeAI
+
+> > > > > > > ffe3daf03c37556f1bb21c9fa70ff9331a758a71
+
 # TechResumeAI
 
 The scope of this project is to develop a web application that assists ALX software engineering internship graduates in creating powerful, captivating, and ATS-compliant resumes. The application will utilize GPT's API to rewrite and transform user responses to specific resume questionnaires, generating job-winning content based on Certified Professional Resume Writer (CPRW) writing guide and Google's XYZ resume formula.
@@ -45,3 +51,7 @@ openai: OpenAI Python client
 To connect your Python application to MySQL, you'll need a connector. You can install it with the following command:
 
 `pip install mysql-connector-python`
+
+To run the application:
+
+`python app.py`
