@@ -1,4 +1,8 @@
+# <<<<<<< HEAD
+
 TechResumeAI
+
+> > > > > > > ffe3daf03c37556f1bb21c9fa70ff9331a758a71
 
 # TechResumeAI
 
