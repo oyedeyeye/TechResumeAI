@@ -9,7 +9,7 @@ db = SQLAlchemy()
 """create the app"""
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root@localhost/TechResumeAI'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/TechResumeAI'
 
 @app.route('/')
 def hello_world():
