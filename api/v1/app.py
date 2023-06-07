@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """ Flask Application script"""
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from models.engine.db_storage import db, DBStorage
+from models.user import User
+from models.resume_info import Resume_info
+from models.template import Template
 
-"""create the database extension"""
-db = SQLAlchemy()
 
 """create the app"""
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/TechResumeAI'
+db_storage = DBStorage()
+db_storage.setup_db(app)
+
 
 @app.route('/')
 def hello_world():
