@@ -19,7 +19,7 @@ load_dotenv()
 """create the app"""
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-db_storage = DBStorage()
+db_storage = DBStorage(app)
 db_storage.setup_db(app)
 
 
