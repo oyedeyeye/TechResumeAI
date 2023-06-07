@@ -30,12 +30,13 @@ class DBStorage:
         TRAI_MYSQL_PWD = getenv('TRAI_MYSQL_PWD')
         TRAI_MYSQL_HOST = getenv('TRAI_MYSQL_HOST')
         TRAI_MYSQL_DB = getenv('TRAI_MYSQL_DB')
+        trai_url = 'mysql+pymysql://{}:{}@{}/{}'.format(
+                                                    TRAI_MYSQL_USER,
+                                                    TRAI_MYSQL_PWD,
+                                                    TRAI_MYSQL_HOST,
+                                                    TRAI_MYSQL_DB)
         
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}:{}@{}/{}'.
-                                                        format(TRAI_MYSQL_USER,
-                                                                TRAI_MYSQL_PWD,
-                                                                TRAI_MYSQL_HOST,
-                                                                TRAI_MYSQL_DB)
+        app.config['SQLALCHEMY_DATABASE_URI'] = trai_url
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
 
