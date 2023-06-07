@@ -7,7 +7,7 @@ from models.engine.db_storage import db
 
 class User(db.Model):
     """User class"""
-    __table__ = 'user'
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     github_id = db.Column(db.String(128), nullable=False)
     name = db.Column(db.String(128), nullable=False)
