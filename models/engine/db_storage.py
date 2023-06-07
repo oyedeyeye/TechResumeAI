@@ -17,11 +17,12 @@ class DBStorage:
     __session = None
     __engine = None
 
-    def __init__(self):
+    def __init__(self, app=None):
         """Instatiates the DBStorage object"""
-
-        self.__engine = db.get_engine()
-        self.__session = db.create_scoped_session()
+        if app is not None:
+            self.setup_db(app)
+            self.__engine = db.get_engine()
+            self.__session = db.create_scoped_session()
 
     def setup_db(self, app):
         """DB connection configuration"""
@@ -30,11 +31,11 @@ class DBStorage:
         TRAI_MYSQL_HOST = getenv('TRAI_MYSQL_HOST')
         TRAI_MYSQL_DB = getenv('TRAI_MYSQL_DB')
         
-        app.config['SQLALCHEMY_DATABASE_URI'] = getenv('mysql+pymysql://{}:{}@{}/{}'.
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}:{}@{}/{}'.
                                                         format(TRAI_MYSQL_USER,
                                                                 TRAI_MYSQL_PWD,
                                                                 TRAI_MYSQL_HOST,
-                                                                TRAI_MYSQL_DB))
+                                                                TRAI_MYSQL_DB)
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
 
