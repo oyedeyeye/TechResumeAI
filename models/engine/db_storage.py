@@ -33,7 +33,7 @@ class DBStorage:
                                                     TRAI_MYSQL_PWD,
                                                     TRAI_MYSQL_HOST,
                                                     TRAI_MYSQL_DB)
-        
+
         app.config['SQLALCHEMY_DATABASE_URI'] = trai_url
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
@@ -41,8 +41,8 @@ class DBStorage:
         with app.app_context():
             if not db.engine.table_names():
                 db.create_all()
-            self.__engine = db.get_engine(app)
-            self.__session = db.create_scoped_session()
+            self.__engine = db.get_engine()
+            self.__session = db.session()  # instead of scoped_session()
 
     def all(self, cls=None):
         """Query all records in the database"""
@@ -55,7 +55,7 @@ class DBStorage:
                 objs += self.__session.query(cls).all()
         return objs
 
-    # define additional methods for managing database records (e.g., new, save, delete, count. get, )
+    # additional methods for managing database records
     def new(self, obj):
         """Add new object into the current database session"""
         if obj:
@@ -81,7 +81,7 @@ class DBStorage:
         """Reload (create all tables in the database)"""
         Base.metadata.create_all(self.__engine)
         Session = scoped_session(sessionmaker(bind=self.__engine,
-                                               expire_on_commit=False))
+                                              expire_on_commit=False))
         self.__session = Session()
 
     def count(self, cls=None):
