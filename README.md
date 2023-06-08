@@ -49,3 +49,4 @@ To connect your Python application to MySQL, you'll need a connector. You can in
 To run the application:
 
 `python app.py`
+
