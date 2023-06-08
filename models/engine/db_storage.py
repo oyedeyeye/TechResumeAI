@@ -41,7 +41,8 @@ class DBStorage:
         db.init_app(app)
 
         with app.app_context():
-            db.create_all()
+            if not db.engine.table_names():
+                db.create_all()
 
     def all(self, cls=None):
         """Query all records in the database"""
