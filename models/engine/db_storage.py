@@ -20,9 +20,10 @@ class DBStorage:
     def __init__(self, app=None):
         """Instatiates the DBStorage object"""
         if app is not None:
-            self.setup_db(app)
-            self.__engine = db.get_engine()
-            self.__session = db.create_scoped_session()
+            with app.app_context():
+                self.setup_db(app)
+                self.__engine = db.get_engine(app)
+                self.__session = db.create_scoped_session()
 
     def setup_db(self, app):
         """DB connection configuration"""
@@ -40,9 +41,8 @@ class DBStorage:
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
 
-        with app.app_context():
-            if not db.engine.table_names():
-                db.create_all()
+        if not db.engine.table_names():
+            db.create_all()
 
     def all(self, cls=None):
         """Query all records in the database"""
