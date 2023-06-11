@@ -1,0 +1,4 @@
+setup_mysql_dev.sql
+venv/
+TRAi_setup_mysql_test.sql
+.env
