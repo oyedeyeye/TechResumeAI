@@ -1,25 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="styles/homepage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Homepage</title>
 </head>
 <body>
-  <nav>
+    <header>
+        <div class="bigscreen">
+            <div class="logo"><a href="#">Dev Resume</a></div>
+            <ul class="mid-link">
+                <li><button class="mid-link1"><a href="#">Create Resume</a></button></li>
+                <li><button class="mid-link1"><a href="#">Samples</a></button></li>
+            </ul>
+            <ul class="right-link">
+                <li><button class="right-link1"><a href="#">Log In</a></button></li>
+                <li><button class="right-link1"><a href="#">Sign Up</a></button></li>
+            </ul>
+        <div class="dropdown-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        </div>
 
-    <div class="left">
-      <p><a href="#">Dev Resume Builder</a></p>
-    </div>
+        <div class="smallscreen">
+            <ul>
+                <li><a href="#">Create Resume</a></li>
+                <li><a href="#">Samples</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+        </div>
+        
+    </header>
+    
+    <div class="bkg-img"></div>
 
-    <div class="middle">
-      <button class="btn-right"><a href="#">Create Resume</a></button>
-      <button class="btn-left"><a href="#">Samples</a></button>
-    </div>
+    <script>
+        const dropDownBtn = document.querySelector('.dropdown-btn')
+        const dropDownBtnIcon = document.querySelector('.dropdown-btn i')
+        const smallScreen = document.querySelector('.smallscreen')
+        
+        dropDownBtn.onclick = function() {
+            smallScreen.classList.toggle('open')
+            const isOpen = smallScreen.classList.contains('open')
 
-    <div class="right">
-      <button class="btn-right"><a href="#">Log In</a></button>
-      <button class="btn-left"><a href="#">Sign Up</a></button>
-    </div>
-      
-  </nav>
+            dropDownBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+
 </body>
 </html>
