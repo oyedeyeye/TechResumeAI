@@ -20,6 +20,15 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/* body */
+body{
+  background-image: url(../images/bkgimg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* height: 100vh; */
+}
+
 /* header */
 .bigscreen {
   display: flex;
@@ -52,7 +61,7 @@ time, mark, audio, video {
     text-decoration: none;
   }
 
-  .mid-link1, .right-link1{
+  .mid-link1, .right-link1, .create-btn {
     background-color: #F37400;
     color: #fff;
     border-radius: 10px 2px 10px 2px;
@@ -78,14 +87,16 @@ a:hover {
   display: none;
 }
 
-.bkg-img{
+/* .bkg-img{
     background-image: url(../images/bkgimg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 
-}
+} */
+
+
 
 /* Dropdown Button */
 .smallscreen {
@@ -112,6 +123,75 @@ a:hover {
     justify-content: center;
 }
 
+/* Aside */
+.aside-same {
+  display: flex;
+  max-width: 1400px;
+  margin: 40px 20px 20px 20px;
+  gap: 2rem;
+
+}
+
+.asides {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.aside-left{
+  background-color: rgba(255, 255, 255, 0.1);
+  /* opacity: 0.8; */
+  flex: 1;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.aside-right{
+  background-color: blue;
+  flex: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  
+  /* width: 100%;
+  height: 3000px; */
+}
+
+/* Section */
+.aside-next{
+  /* display: flex; */
+  color: #F37400;
+  font-size: 2rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-items: center;
+  padding: 0px 60px;
+  line-height: 3rem;
+  /* background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin: 40px;
+  border: 20px;
+  border-color: yellow; */
+}
+
+button a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.create-btn-div{
+  display: flex;
+  justify-content: center;
+  /* width: 900px; */
+  height: 25px;
+}
+
+
+
+
+
+
+
 /* Responsive design */
 @media screen and (max-width: 992px){
     .bigscreen .mid-link,
@@ -130,6 +210,15 @@ a:hover {
         color: #F37400;
     }
 
+    .aside-same{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .create-btn-div{
+      margin-top: 20px;
+    }
+
 }
 
 @media screen and (max-width: 597px){
@@ -139,5 +228,10 @@ a:hover {
     }
     ul a{
         color: #F37400;
+    }
+
+    .aside-same{
+      display: flex;
+      flex-direction: column;
     }
 }
