@@ -26,7 +26,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 /* header */
@@ -35,6 +35,14 @@ body{
   padding: 20px 30px;
   background-color: black;
   justify-content: space-between;
+}
+
+.form_logo{
+  background-image: url(../images/form_logo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
 }
 
 .bigscreen ul {
@@ -68,12 +76,8 @@ body{
     background-color: #F37400;
     color: #fff;
     border-radius: 10px 2px 10px 2px;
+    text-decoration: none;
  }
-
- button a{
-  color: #fff;
-  text-decoration: none;
-}
 
 .get_started-btn-div{
   display: flex;
@@ -83,6 +87,11 @@ body{
 
 .get_started-btn{
   background-color: green;
+}
+
+.get_started-btn a{
+  color: #fff;
+  text-decoration: none;
 }
 
 li {
@@ -116,19 +125,20 @@ a:hover {
   top: 75px;
   height: 0;
   width: 170px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+  background: rgba(21, 201, 21, 0.5);
+  /* backdrop-filter: blur(15px); */
   border-radius: 10px;
   overflow: hidden;
   transition: heigth 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .smallscreen a{
-  color: black;
+  color: white;
+  font-weight: bold;
 }
 
 .smallscreen a:hover{
-  color: green;
+  color: #F37400;
 }
 
 .smallscreen.open{
@@ -147,15 +157,15 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.aside-same {
+.aside-first, .aside-second {
   display: flex;
   max-width: 1400px;
-  margin: 40px 20px 20px 20px;
+  margin: 30px 20px 20px 20px;
   gap: 2rem;
 }
 
-.aside-center{
-  background-color: rgba(255, 255, 255, 0.1);
+.aside-center, .aside-dropdown{
+  /* background-color: rgba(255, 255, 255, 0.1); */
   flex: 1;
   color: #fff;
   border-radius: 20px;
@@ -163,6 +173,14 @@ a:hover {
   line-height: 3rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
+}
+
+#aside1{
+  background-color: rgba(5, 14, 4, 0.5);
+}
+#aside2{
+  background-color: rgba(5, 14, 4, 0.5);
+  /* opacity: 0.4; */
 }
 
 .aside-center .main-heading {
@@ -173,7 +191,7 @@ a:hover {
 }
 
 /* Section */
-.aside-next{
+.aside-dropdown{
   color: #F37400;
   font-size: 2rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -201,7 +219,7 @@ a:hover {
         color: #F37400;
     }
 
-    .aside-same{
+    .aside-first{
       display: flex;
       flex-direction: column;
     }
@@ -221,7 +239,7 @@ a:hover {
         color: #F37400;
     }
 
-    .aside-same{
+    .aside-first{
       display: flex;
       flex-direction: column;
     }
